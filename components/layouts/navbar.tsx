@@ -32,7 +32,7 @@ const Navbar = () => {
       submenu: [
         {
           title: "Tentang",
-          href: "/tentang",
+          href: "/profil",
         },
         {
           title: "Profile Pejabat Struktural",
@@ -81,7 +81,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="bg-white py-3 drop-shadow-lg">
+    <header className="sticky top-0 z-30 bg-white py-3 drop-shadow-lg">
       <nav className="container hidden justify-between md:flex">
         <Link href="/" className="">
           <Image
