@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -22,7 +21,7 @@ const ProfileFeature = () => {
     if (!params.get("section")) {
       setActiveTab("tentang");
     }
-  }, []);
+  }, [params]);
 
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);

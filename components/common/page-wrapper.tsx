@@ -9,7 +9,7 @@ export interface PageWrapperProps {
 
 const PageWrapper: React.FC<PageWrapperProps> = ({ items, children }) => {
   return (
-    <main className="mb-8 mt-4 sm:mb-14 md:min-h-[80vh]">
+    <main className="mb-8 mt-4 sm:mb-14 md:min-h-[40vh]">
       <Breadcrumbs items={items} />
       {children}
     </main>

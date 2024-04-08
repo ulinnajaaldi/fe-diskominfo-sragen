@@ -24,27 +24,30 @@ import {
   AccordionTrigger,
 } from "../ui/accordion";
 import { Separator } from "../ui/separator";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
+  const router = useRouter();
+
   const NAVBAR_ITEM = [
     {
       title: "PROFIL",
       submenu: [
         {
           title: "Tentang",
-          href: "/profil",
+          href: "/profil?section=tentang",
         },
         {
           title: "Profile Pejabat Struktural",
-          href: "/profile-pejabat-struktural",
+          href: "/profil?section=pejabat-struktural",
         },
         {
           title: "Tugas dan Fungsi",
-          href: "/tugas-dan-fungsi",
+          href: "/profil?section=tugas-fungsi",
         },
         {
           title: "Visi dan Misi",
-          href: "/visi-dan-misi",
+          href: "/profil?section=visi-misi",
         },
       ],
     },
@@ -53,7 +56,7 @@ const Navbar = () => {
       submenu: [
         {
           title: "PROGAM DISKOMINFO",
-          href: "/program-diskominfo",
+          href: "/program",
         },
       ],
     },
@@ -111,11 +114,18 @@ const Navbar = () => {
                   <NavigationMenuContent>
                     <ul className="grid p-2 md:w-[300px]">
                       {item.submenu.map((subitem, index) => (
-                        <ListItem
-                          key={index}
-                          href={subitem.href}
-                          title={subitem.title}
-                        />
+                        <NavigationMenuLink key={index} asChild>
+                          <Link
+                            href={subitem.href}
+                            className={cn(
+                              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+                            )}
+                          >
+                            <div className="text-sm font-medium leading-none">
+                              {subitem.title}
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
                       ))}
                     </ul>
                   </NavigationMenuContent>
@@ -190,28 +200,5 @@ const Navbar = () => {
     </header>
   );
 };
-
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className,
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
-ListItem.displayName = "ListItem";
 
 export default Navbar;
