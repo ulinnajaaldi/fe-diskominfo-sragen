@@ -4,11 +4,11 @@ import { Metadata } from "next";
 import ProgamFeature from "@/features/Base/Progam";
 
 export const metadata: Metadata = {
-  title: "Progam",
+  title: "Profile",
 };
 
-const ProgamDiskominfo = () => {
+const DiskominfoProgam = () => {
   return <ProgamFeature />;
 };
 
-export default ProgamDiskominfo;
+export default DiskominfoProgam;

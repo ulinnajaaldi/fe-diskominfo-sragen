@@ -24,30 +24,27 @@ import {
   AccordionTrigger,
 } from "../ui/accordion";
 import { Separator } from "../ui/separator";
-import { useRouter } from "next/navigation";
 
 const Navbar = () => {
-  const router = useRouter();
-
   const NAVBAR_ITEM = [
     {
       title: "PROFIL",
       submenu: [
         {
           title: "Tentang",
-          href: "/profil?section=tentang",
+          href: "/profil",
         },
         {
           title: "Profile Pejabat Struktural",
-          href: "/profil?section=pejabat-struktural",
+          href: "/profil",
         },
         {
           title: "Tugas dan Fungsi",
-          href: "/profil?section=tugas-fungsi",
+          href: "/profil",
         },
         {
           title: "Visi dan Misi",
-          href: "/profil?section=visi-misi",
+          href: "/profil",
         },
       ],
     },
@@ -56,7 +53,7 @@ const Navbar = () => {
       submenu: [
         {
           title: "PROGAM DISKOMINFO",
-          href: "/program",
+          href: "/diskominfo-progam",
         },
       ],
     },

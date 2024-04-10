@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import React, { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import PageWrapper from "@/components/common/page-wrapper";
@@ -13,19 +12,10 @@ import {
 } from "./section";
 
 const ProfileFeature = () => {
-  const params = useSearchParams();
-  const router = useRouter();
-  const [activeTab, setActiveTab] = useState(params.get("section"));
-
-  useEffect(() => {
-    if (!params.get("section")) {
-      setActiveTab("tentang");
-    }
-  }, [params]);
+  const [activeTab, setActiveTab] = useState("tentang");
 
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
-    router.push(`/profil?section=${tab}`);
   };
 
   const items = [
