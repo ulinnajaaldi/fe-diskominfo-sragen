@@ -160,7 +160,7 @@ const DashboardGaleriVideoFeature = () => {
                         />
                         {isEdit && (
                           <ActionLivePreview
-                            href={`${ROUTES_PATH.galeriVideo}/${selectedGaleri?.id || ""}`}
+                            href={`${ROUTES_PATH.galeriVideo}`}
                           />
                         )}
                       </div>
