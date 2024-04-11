@@ -6,6 +6,7 @@ import Link from "next/link";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 
 import { cn } from "@/lib/utils";
+import { ROUTES_PATH } from "@/constants/routes";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -32,19 +33,19 @@ const Navbar = () => {
       submenu: [
         {
           title: "Tentang",
-          href: "/profil",
+          href: ROUTES_PATH.profil,
         },
         {
           title: "Profile Pejabat Struktural",
-          href: "/profil",
+          href: ROUTES_PATH.profil,
         },
         {
           title: "Tugas dan Fungsi",
-          href: "/profil",
+          href: ROUTES_PATH.profil,
         },
         {
           title: "Visi dan Misi",
-          href: "/profil",
+          href: ROUTES_PATH.profil,
         },
       ],
     },
@@ -53,30 +54,30 @@ const Navbar = () => {
       submenu: [
         {
           title: "PROGAM DISKOMINFO",
-          href: "/diskominfo-progam",
+          href: ROUTES_PATH.progam,
         },
       ],
     },
     {
       title: "BERITA",
-      href: "/berita",
+      href: ROUTES_PATH.berita,
     },
     {
       title: "GALERI",
       submenu: [
         {
           title: "Galeri Foto",
-          href: "/galeri-foto",
+          href: ROUTES_PATH.galeriImage,
         },
         {
           title: "Galeri Video",
-          href: "/galeri-video",
+          href: ROUTES_PATH.galeriVideo,
         },
       ],
     },
     {
       title: "KONTAK",
-      href: "/kontak",
+      href: ROUTES_PATH.kontak,
     },
   ];
 
