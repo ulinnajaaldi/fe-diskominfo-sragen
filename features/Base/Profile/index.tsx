@@ -30,7 +30,7 @@ const ProfileFeature = () => {
 
   return (
     <PageWrapper items={items}>
-      <section className="xs:pt-20 container relative grid grid-cols-1 gap-10 pt-14 md:grid-cols-12">
+      <section className="container relative grid grid-cols-1 gap-10 pt-5 md:grid-cols-12">
         <div className="col-span-1 flex flex-row flex-wrap gap-2 md:col-span-3 md:flex-col md:gap-5">
           <Button
             onClick={() => handleTabChange("tentang")}

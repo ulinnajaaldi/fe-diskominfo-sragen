@@ -15,8 +15,10 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useRouter } from "next/navigation";
 
 const DashboardNavbar = () => {
+  const router = useRouter();
   const [data, getUser, logoutHandler] = useAuthStore(
     useShallow((state) => [state.data, state.getUser, state.logoutHandler]),
   );
@@ -46,6 +48,14 @@ const DashboardNavbar = () => {
             </p>
           </div>
         </DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem
+          onClick={() => {
+            router.push("/");
+          }}
+        >
+          Homepage
+        </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={logoutHandler}>
           Log out

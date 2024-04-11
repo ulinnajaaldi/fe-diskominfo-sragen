@@ -12,15 +12,15 @@ export interface BreadcrumbsProps {
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
   return (
-    <aside data-cursor="-exclusion" className="container">
+    <div className="container relative">
       <div className="relative">
-        <div className="xs:text-base absolute left-0 top-0 mt-3 flex flex-wrap gap-y-1 text-sm">
+        <div className="xs:text-base mt-3 flex flex-wrap gap-y-1 text-sm">
           {items.map((breadcrumb, index) => (
             <div key={index} className="flex items-center">
               {breadcrumb?.slug ? (
                 <Link
                   href={breadcrumb.slug}
-                  className="btnAnimation inline-grid overflow-hidden"
+                  className="inline-grid overflow-hidden"
                 >
                   <span id={`breadcrumb-item-${index}`}>
                     {breadcrumb.title}
@@ -36,7 +36,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
           ))}
         </div>
       </div>
-    </aside>
+    </div>
   );
 };
 

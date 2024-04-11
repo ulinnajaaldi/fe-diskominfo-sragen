@@ -14,7 +14,7 @@ const KontakFeature = () => {
 
   return (
     <PageWrapper items={items}>
-      <section className="xs:pt-20 container relative pt-14">
+      <section className="container relative pt-5">
         <h1 className="text-2xl font-bold text-blue-950">Hubungi Kami</h1>
         <div className="mt-5 grid grid-cols-2 gap-10">
           <div>
